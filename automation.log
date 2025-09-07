@@ -1,0 +1,61 @@
+/Library/Python/3.9/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+Traceback (most recent call last):
+  File "/Users/shashichintalapalli/NaukriAutomation/NaukriAutomation.py", line 44, in <module>
+    textarea = wait.until(EC.visibility_of_element_located((By.ID, "resumeHeadlineTxt")))
+  File "/Library/Python/3.9/site-packages/selenium/webdriver/support/wait.py", line 138, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+0   chromedriver                        0x000000010079b55c cxxbridge1$str$ptr + 2731064
+1   chromedriver                        0x0000000100793454 cxxbridge1$str$ptr + 2698032
+2   chromedriver                        0x00000001002e23f8 cxxbridge1$string$len + 90664
+3   chromedriver                        0x000000010032971c cxxbridge1$string$len + 382284
+4   chromedriver                        0x000000010036ab1c cxxbridge1$string$len + 649548
+5   chromedriver                        0x000000010031da0c cxxbridge1$string$len + 333884
+6   chromedriver                        0x000000010075e5e0 cxxbridge1$str$ptr + 2481340
+7   chromedriver                        0x0000000100761848 cxxbridge1$str$ptr + 2494244
+8   chromedriver                        0x000000010073f234 cxxbridge1$str$ptr + 2353424
+9   chromedriver                        0x0000000100762104 cxxbridge1$str$ptr + 2496480
+10  chromedriver                        0x00000001007302e4 cxxbridge1$str$ptr + 2292160
+11  chromedriver                        0x0000000100781ff8 cxxbridge1$str$ptr + 2627284
+12  chromedriver                        0x0000000100782184 cxxbridge1$str$ptr + 2627680
+13  chromedriver                        0x0000000100793090 cxxbridge1$str$ptr + 2697068
+14  libsystem_pthread.dylib             0x00000001945eec0c _pthread_start + 136
+15  libsystem_pthread.dylib             0x00000001945e9b80 thread_start + 8
+
+/Library/Python/3.9/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+Profile headline updated successfully!
+/Library/Python/3.9/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+Profile headline updated successfully!
+/Library/Python/3.9/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+Traceback (most recent call last):
+  File "/Users/shashichintalapalli/NaukriAutomation/NaukriAutomation.py", line 40, in <module>
+    edit_button = wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, "span.edit.icon")))
+  File "/Library/Python/3.9/site-packages/selenium/webdriver/support/wait.py", line 138, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+0   chromedriver                        0x0000000102e6ae00 cxxbridge1$str$ptr + 2742224
+1   chromedriver                        0x0000000102e62d00 cxxbridge1$str$ptr + 2709200
+2   chromedriver                        0x00000001029ad0b8 cxxbridge1$string$len + 90520
+3   chromedriver                        0x00000001029f45d8 cxxbridge1$string$len + 382648
+4   chromedriver                        0x0000000102a35980 cxxbridge1$string$len + 649824
+5   chromedriver                        0x00000001029e88f4 cxxbridge1$string$len + 334292
+6   chromedriver                        0x0000000102e2e478 cxxbridge1$str$ptr + 2494024
+7   chromedriver                        0x0000000102e316a4 cxxbridge1$str$ptr + 2506868
+8   chromedriver                        0x0000000102e0f3b0 cxxbridge1$str$ptr + 2366848
+9   chromedriver                        0x0000000102e31f4c cxxbridge1$str$ptr + 2509084
+10  chromedriver                        0x0000000102e004a8 cxxbridge1$str$ptr + 2305656
+11  chromedriver                        0x0000000102e51644 cxxbridge1$str$ptr + 2637844
+12  chromedriver                        0x0000000102e517d0 cxxbridge1$str$ptr + 2638240
+13  chromedriver                        0x0000000102e6294c cxxbridge1$str$ptr + 2708252
+14  libsystem_pthread.dylib             0x0000000188192c0c _pthread_start + 136
+15  libsystem_pthread.dylib             0x000000018818db80 thread_start + 8
+
+/Library/Python/3.9/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+Profile headline updated successfully!
