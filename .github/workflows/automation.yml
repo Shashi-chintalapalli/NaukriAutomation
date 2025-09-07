@@ -2,7 +2,7 @@ name: Naukri Automation
 
 on:
   schedule:
-    - cron: '0 * * * *'  # every hour
+    - cron: '0 * * * *'  # run every hour
   workflow_dispatch:     # allows manual trigger
 
 jobs:
@@ -33,3 +33,9 @@ jobs:
 
       - name: Run Naukri Automation
         run: python NaukriAutomation.py
+
+      - name: Upload log as artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: automation-log
+          path: automation.log

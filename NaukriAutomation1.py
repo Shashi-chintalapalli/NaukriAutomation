@@ -6,57 +6,67 @@ from selenium.webdriver.chrome.options import Options
 import os
 import time
 
-# Use GitHub Secrets for credentials
+# --- Get credentials from GitHub Secrets ---
 username = os.environ['NAUKRI_USERNAME']
 password = os.environ['NAUKRI_PASSWORD']
 
-# Set up headless Chrome
+# --- Set up headless Chrome ---
 chrome_options = Options()
-chrome_options.add_argument("--headless")  # run without GUI
+chrome_options.add_argument("--headless")  # Run without GUI
 chrome_options.add_argument("--no-sandbox")
 chrome_options.add_argument("--disable-dev-shm-usage")
 
 driver = webdriver.Chrome(options=chrome_options)
 
-try:
-    # Step 1: Open Naukri login page
-    driver.get("https://www.naukri.com/nlogin/login")
+# --- Log file ---
+log_file = "automation.log"
 
+def log(message):
+    print(message)
+    with open(log_file, "a") as f:
+        f.write(f"{time.strftime('%Y-%m-%d %H:%M:%S')} - {message}\n")
+
+try:
+    log("Starting Naukri automation...")
+
+    # Step 1: Open login page
+    driver.get("https://www.naukri.com/nlogin/login")
     wait = WebDriverWait(driver, 10)
 
-    # Step 2: Enter username and password
+    # Step 2: Enter username & password
     wait.until(EC.presence_of_element_located((By.ID, "usernameField"))).send_keys(username)
     driver.find_element(By.ID, "passwordField").send_keys(password)
 
-    # Step 3: Click Login button
+    # Step 3: Click login
     driver.find_element(By.XPATH, '//button[text()="Login"]').click()
+    time.sleep(10)  # wait for redirect
 
-    # Step 4: Wait until login is successful
-    time.sleep(10)  # adjust if needed
-
-    # Step 5: Navigate to your profile page directly
+    # Step 4: Go to profile
     profile_url = "https://www.naukri.com/mnjuser/profile?id=&altresid"
     driver.get(profile_url)
-
     time.sleep(5)
 
-    # Step 6: Click the Edit button for Resume Headline
+    # Step 5: Click Edit button
     edit_button = wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, "span.edit.icon")))
     edit_button.click()
 
-    # Step 7: Append a dot or space to force update
+    # Step 6: Update resume headline
     textarea = wait.until(EC.visibility_of_element_located((By.ID, "resumeHeadlineTxt")))
     current_text = textarea.get_attribute("value")
-    new_text = current_text + " ."
+    new_text = current_text + " ."  # append dot to force update
     textarea.clear()
     textarea.send_keys(new_text)
 
-    # Step 8: Click Save button
+    # Step 7: Click Save
     save_button = wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, "button.btn-dark-ot[type='submit']")))
     save_button.click()
-
     time.sleep(5)
-    print("Profile headline updated successfully!")
+
+    log("Profile headline updated successfully!")
+
+except Exception as e:
+    log(f"Error occurred: {e}")
 
 finally:
     driver.quit()
+    log("Browser closed.")
